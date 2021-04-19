@@ -142,8 +142,8 @@ package() {
 }
 
 upload() {
-  tmpDir=$(mktemp -d)
-  pushd $tmpDir >& /dev/null
+  #tmpDir=$(mktemp -d)
+  #pushd $tmpDir >& /dev/null
 
   git clone ${REPO_URL}
   cd ${REPOSITORY}
@@ -171,10 +171,10 @@ upload() {
   git add ${INDEX_DIR}/index.yaml
 
   git commit -m "Publish $charts"
-  git push origin ${BRANCH}
+  #git push origin ${BRANCH}
 
-  popd >& /dev/null
-  rm -rf $tmpDir
+  #popd >& /dev/null
+  #rm -rf $tmpDir
 }
 
 main
